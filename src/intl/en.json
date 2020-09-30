@@ -1,0 +1,17 @@
+{
+  "companyName": "AE Studio",
+  "title": "Creative interior design and planning.",
+  "main.navigation": {
+    "home": "Home"
+  },
+  "page.home": {
+    "title": "We build.",
+    "lead": "Welcome at AE Studio."
+  },
+  "page.notfound": {
+    "title": "Sorry, not found.",
+    "lead": "We try to do better."
+  },
+  "action.skipNavigation": "Skip navigation",
+  "action.goBack": "Back home."
+}

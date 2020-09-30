@@ -1,0 +1,17 @@
+{
+  "companyName": "AE Studio",
+  "title": "Kreative Raumgestaltung und Planung.",
+  "main.navigation": {
+    "home": "Home"
+  },
+  "page.home": {
+    "title": "Wir bauen auf.",
+    "lead": "Willkommen im AE Studio."
+  },
+  "page.notfound": {
+    "title": "Sorry, nicht gefunden.",
+    "lead": "Wir versuchen uns zu verbessern."
+  },
+  "action.skipNavigation": "Navigation überspringen",
+  "action.goBack": "Zurück zu Home."
+}
