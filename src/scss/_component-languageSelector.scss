@@ -1,0 +1,19 @@
+.LanguageSelector {
+
+  a {
+    display: inline-block;
+    margin-right: .5rem;
+    line-height: 2.5rem;
+    color: $navbar-light-color;
+
+    &:hover,
+    &:focus {
+      color: $navbar-light-hover-color;
+      text-decoration: if($link-hover-decoration == underline, none, null);
+    }
+
+    &.active {
+      color: $navbar-light-active-color;
+    }
+  }
+}

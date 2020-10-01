@@ -1,5 +1,7 @@
 // Variables
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
+@import url("https://use.typekit.net/xwy1dqu.css");
+
+$font-family-sans-serif: 'sofia-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
 $font-family-serif: Palatino, Times, Times New Roman, serif !default;
 
 // Restated Bootstrap Variables
@@ -53,7 +55,7 @@ $display2-weight: 600;
 $display3-weight: 600;
 $display4-weight: 600;
 
-$headings-color: $gray-700 !default;
+$headings-color: $black !default;
 $headings-font-weight: 600 !default;
 
 $box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;

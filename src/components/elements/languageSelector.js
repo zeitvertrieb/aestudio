@@ -1,27 +1,28 @@
 import React from 'react'
-import { injectIntl, IntlContextConsumer, changeLocale, FormattedMessage } from 'gatsby-plugin-intl'
+import { injectIntl, IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl'
 
 const LanguageSelector = () => {
   const languageName = {
-    en: "English",
-    de: "Deutsch"
+    de: "Deutsch",
+    en: "English"
   }
   return (
-    <ul className="list-inline m-0">
-        <IntlContextConsumer>
-          { ({ languages, language: currentLocale }) =>
-            languages.map(language => (
-              <li
-                key={language}
-                onClick={() => changeLocale(language)}
-                className="list-inline-item py-2"
-                >
-                <span>{languageName[language]}</span>
-              </li>
-            ))
-          }
-        </IntlContextConsumer>
-    </ul>
+    <div className="LanguageSelector list-inline ml-2 mr-auto mr-sm-4">
+      <IntlContextConsumer>
+        {({ languages, language: currentLocale }) =>
+          languages.map(language => (
+            <a
+              role="button"
+              key={language}
+              onClick={() => changeLocale(language)}
+              className={ currentLocale === language ? `active` : `` }
+            >
+              {languageName[language]}
+            </a>
+          ))
+        }
+      </IntlContextConsumer>
+    </div>
   )
 }
 

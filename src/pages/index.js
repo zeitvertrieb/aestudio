@@ -1,10 +1,12 @@
 import React from 'react'
-import { FormattedMessage, injectIntl, Link } from 'gatsby-plugin-intl'
-import { Container, Row, Col, Jumbotron, Image } from 'react-bootstrap'
+import { graphql } from 'gatsby'
+import { FormattedMessage, injectIntl } from 'gatsby-plugin-intl'
+import { Container, Jumbotron } from 'react-bootstrap'
+import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/helper/seo'
 
-const IndexPage = ({ intl }) => {
+const IndexPage = ({ intl, data }) => {
   return (
     <Layout>
       <SEO
@@ -12,21 +14,30 @@ const IndexPage = ({ intl }) => {
         title={intl.formatMessage({ id: "title" })}
         keywords={[`innovation`, `television`, `streaming`, `marketing`]}
       />
-      <Jumbotron>
+      <Jumbotron fluid>
         <Container>
-          <Row>
-            <Col xs="12" className="ml-auto mr-auto">
-              <h1 className="display-2">
-                <FormattedMessage id="page.home.title" />
-              </h1>
-              <p className="lead"><FormattedMessage id="page.home.lead" /></p>
-              <Image fluid src="https://images.musterhaus.net/app/uploads/richtfest-richtbaum-2.jpg" alt="Under construction" />
-            </Col>
-          </Row>
+          <h1 className="display-2">
+            <FormattedMessage id="page.home.title" />
+          </h1>
+          <p className="lead"><FormattedMessage id="page.home.lead" /></p>
         </Container>
+        <Img fadeIn fluid={data.file.childImageSharp.fluid} alt="home" />
       </Jumbotron>
     </Layout>
   )
 }
 
 export default injectIntl(IndexPage)
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "hero-home.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+  }
+`

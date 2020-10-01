@@ -13,27 +13,21 @@ const ErrorPage = ({ intl }) => {
           title={`404: ${intl.formatMessage({ id: "page.notfound.title" })}`}
           description={intl.formatMessage({ id: "page.notfound.description" })}
         />
-        <Jumbotron>
+        <Jumbotron fluid>
           <Container>
-            <Row>
-              <Col xs="12" lg={{ span: 6, order: 2 }} className="ml-auto">
-                <h1 className="display-2 mb-4 py-4">
-                  <strong><FormattedMessage id="page.notfound.title" /></strong>
-                </h1>
-                <p className="lead">
-                  <FormattedMessage id="page.notfound.lead" />
-                </p>
-                <div className="pt-4">
-                  <Link to="/" className="btn btn-primary btn-lg">
-                    <FormattedMessage id="action.goBack" />
-                  </Link>
-                </div>
-              </Col>
-              <Col xs="12" lg={{ span: 5, order: 1 }} className="mt-3">
-                <Image src={ErrorImg} width={600} fluid alt="Error 404" />
-              </Col>
-            </Row>
+            <h1 className="display-2">
+              <FormattedMessage id="page.notfound.title" />
+            </h1>
+            <p className="lead">
+              <FormattedMessage id="page.notfound.lead" />
+            </p>
+            <div className="pt-4">
+              <Link to="/" className="btn btn-primary btn-lg">
+                <FormattedMessage id="action.goBack" />
+              </Link>
+            </div>
           </Container>
+          <Image fluid src={ErrorImg} alt="Error 404" />
         </Jumbotron>
       </Layout>
     )

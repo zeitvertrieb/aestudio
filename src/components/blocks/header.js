@@ -13,16 +13,19 @@ const Header = ({ intl }) => {
   ]
 
   return (
-    <header className="navbar__wrapper">
-      <Navbar collapseOnSelect expand="sm" id="site-navbar" variant="light">
+      <Navbar as="header" collapseOnSelect expand="sm" id="site-navbar" variant="light">
         <Container>
-          <a className="sr-only sr-only-focusable nav-link" href="#main">
+          <Navbar.Brand href="#">ae studio</Navbar.Brand>
+          <LanguageSelector />
+          <a className="sr-only sr-only-focusable nav-link p-2 mr-2" href="#main">
             <FormattedMessage id="action.skipNavigation" />
           </a>
-          <Navbar.Toggle aria-controls="top-navbar-nav" />
-          <LanguageSelector />
+          <Navbar.Toggle aria-controls="top-navbar-nav">
+            <span className="icon" />
+            <span className="sr-only">Menu</span>
+          </Navbar.Toggle>
           <Navbar.Collapse id="top-navbar-nav">
-            <Nav as="ul" className="ml-md-auto">
+            <Nav as="ul" className="">
               {menu.map(function(item, i) {
                 return (
                   <li key={i} className="nav-item">
@@ -36,7 +39,6 @@ const Header = ({ intl }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </header>
   )
 }
 
