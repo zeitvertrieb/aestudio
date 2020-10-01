@@ -37,6 +37,9 @@ const Header = ({ intl }) => {
               })}
             </Nav>
           </Navbar.Collapse>
+          <Navbar.Toggle aria-controls="top-navbar-nav" className="navbar-backdrop">
+            <span className="sr-only">Close menu</span>
+          </Navbar.Toggle>
         </Container>
       </Navbar>
   )
