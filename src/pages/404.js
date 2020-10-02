@@ -1,11 +1,12 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { FormattedMessage, injectIntl, Link } from 'gatsby-plugin-intl'
-import { Container, Row, Col, Jumbotron, Image } from 'react-bootstrap'
+import { Container, Jumbotron } from 'react-bootstrap'
 import Layout from '../components/layout'
 import SEO from '../components/helper/seo'
-import ErrorImg from '../assets/404.jpg'
+import Img from 'gatsby-image'
 
-const ErrorPage = ({ intl }) => {
+const ErrorPage = ({ data, intl }) => {
     return (
       <Layout>
         <SEO
@@ -21,15 +22,28 @@ const ErrorPage = ({ intl }) => {
             <p className="lead">
               <FormattedMessage id="page.notfound.lead" />
             </p>
-            <div className="pt-4">
+            <div className="py-4">
               <Link to="/" className="btn btn-primary btn-lg">
                 <FormattedMessage id="action.goBack" />
               </Link>
             </div>
           </Container>
-          <Image fluid src={ErrorImg} alt="Error 404" />
+          <Img fadeIn fluid={data.file.childImageSharp.fluid} alt="Got lost" />
         </Jumbotron>
       </Layout>
     )
   }
 export default injectIntl(ErrorPage)
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "404.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+  }
+`

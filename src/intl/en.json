@@ -2,16 +2,23 @@
   "companyName": "AE Studio",
   "title": "Creative interior design and planning.",
   "main.navigation": {
-    "home": "Home"
+    "home": "Home",
+    "contact": "Contact"
   },
   "page.home": {
     "title": "We build.",
     "lead": "Welcome at AE Studio."
+  },
+  "page.contact": {
+    "title": "AE Studio",
+    "lead": "We are happy to hear from You.",
+    "address": "Waaggasse 4/8, 1040 Vienna, Austria"
   },
   "page.notfound": {
     "title": "Sorry, not found.",
     "lead": "We try to do better."
   },
   "action.skipNavigation": "Skip navigation",
-  "action.goBack": "Back home."
+  "action.selectLanguage": "Select langugage",
+  "action.goBack": "Back"
 }

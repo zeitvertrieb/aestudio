@@ -2,16 +2,23 @@
   "companyName": "AE Studio",
   "title": "Kreative Raumgestaltung und Planung.",
   "main.navigation": {
-    "home": "Home"
+    "home": "Home",
+    "contact": "Kontakt"
   },
   "page.home": {
     "title": "Wir bauen auf.",
     "lead": "Willkommen im AE Studio."
+  },
+  "page.contact": {
+    "title": "AE Studio",
+    "lead": "Wir freuen uns von Ihnen zu hören.",
+    "address": "Waaggasse 4/8, 1040 Wien, Österreich"
   },
   "page.notfound": {
     "title": "Sorry, nicht gefunden.",
     "lead": "Wir versuchen uns zu verbessern."
   },
   "action.skipNavigation": "Navigation überspringen",
-  "action.goBack": "Zurück zu Home."
+  "action.selectLanguage": "Sprache wählen",
+  "action.goBack": "Zurück"
 }

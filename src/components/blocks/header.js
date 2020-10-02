@@ -9,13 +9,17 @@ const Header = ({ intl }) => {
     {
       label: intl.formatMessage({ id: "main.navigation.home" }),
       link: '',
+    },
+    {
+      label: intl.formatMessage({ id: "main.navigation.contact" }),
+      link: 'contact',
     }
   ]
 
   return (
       <Navbar as="header" collapseOnSelect expand="sm" id="site-navbar" variant="light">
         <Container>
-          <Navbar.Brand href="#">ae studio</Navbar.Brand>
+          <Navbar.Brand href="/">ae studio</Navbar.Brand>
           <LanguageSelector />
           <a className="sr-only sr-only-focusable nav-link p-2 mr-2" href="#main">
             <FormattedMessage id="action.skipNavigation" />
@@ -25,11 +29,11 @@ const Header = ({ intl }) => {
             <span className="sr-only">Menu</span>
           </Navbar.Toggle>
           <Navbar.Collapse id="top-navbar-nav">
-            <Nav as="ul" className="">
+            <Nav as="ul">
               {menu.map(function(item, i) {
                 return (
                   <li key={i} className="nav-item">
-                    <Link to={"/" + item.link} className="nav-link">
+                    <Link to={"/" + item.link} className="nav-link" activeClassName="active">
                       {item.label}
                     </Link>
                   </li>
